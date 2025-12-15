@@ -118,6 +118,10 @@
     margin-bottom: var(--ok-line-height);
     margin-top: var(--ok-line-height);
   }
+  .articles caption {
+    font-weight: bold;
+    text-align: left;
+  }
   .articles a {
     color: inherit;
     text-decoration: none;
