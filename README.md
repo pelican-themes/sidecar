@@ -57,7 +57,7 @@ Installation
 1. Clone the theme to a local directory:
 
    ```terminal
-   git clone https://github.com/seanh/sidecar.git
+   git clone https://github.com/pelican-themes/sidecar.git
    ```
 
 2. Pin your version by checking out the latest Sidecar release:
@@ -74,7 +74,7 @@ Installation
    ```
    <!--[[[end]]]-->
 
-   Follow Sidecar on GitHub or subscribe to [GitHub's Atom feed for new releases](https://github.com/seanh/sidecar/releases.atom)
+   Follow Sidecar on GitHub or subscribe to [GitHub's Atom feed for new releases](https://github.com/pelican-themes/sidecar/releases.atom)
    to get notified so you can update your version number.
 
 3. Set the [`THEME`](https://docs.getpelican.com/en/latest/settings.html#THEME)
@@ -382,7 +382,7 @@ You can set your syntax highlighting color scheme with the `SIDECAR_PYGMENTS_THE
 SIDECAR_PYGMENTS_THEME = "monokai"
 ```
 
-See this folder for [all the available themes](https://github.com/seanh/sidecar/tree/main/static/css/pygments)
+See this folder for [all the available themes](https://github.com/pelican-themes/sidecar/tree/main/static/css/pygments)
 and see the Pygments site for [previews of all the themes](https://pygments.org/styles/).
 
 Set `SIDECAR_PYGMENTS_BORDERLESS = True` to remove the border from code blocks:
@@ -659,8 +659,8 @@ That's it--your site should now have a favicon!
 
 What the `base.html` template does is:
 
-1. Overrides [Sidecar's `base.html` template](https://github.com/seanh/sidecar/blob/main/templates/base.html).
+1. Overrides [Sidecar's `base.html` template](https://github.com/pelican-themes/sidecar/blob/main/templates/base.html).
 2. Uses `{% extends %}` to inherit from Sidecar's `base.html` template.
-3. Uses `{% block %}` to override the [`head` block](https://github.com/seanh/sidecar/blob/b22d46698d328f9120d980f6f5c3688080346d40/templates/base.html#L4-L37) in Sidecar's `base.html` template.
+3. Uses `{% block %}` to override the [`head` block](https://github.com/pelican-themes/sidecar/blob/b22d46698d328f9120d980f6f5c3688080346d40/templates/base.html#L4-L37) in Sidecar's `base.html` template.
 4. Uses `{{ super() }}` to call the base template's `head` block.
 5. Finally, adds some HTML to the `head` block to inject the favicons into the site.
