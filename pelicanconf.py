@@ -2,7 +2,7 @@ THEME = "."
 AUTHOR = "Sean Hammond"
 SITENAME = "Sidecar"
 SITESUBTITLE = "Sidecar Demo Site"
-SITEBIO = """This is the demo site for <b>Sidecar</b>, a plain but pretty theme for the Pelican static site generator. See the <a href="https://github.com/seanh/sidecar">README</a> for docs."""
+SITEBIO = """This is the demo site for <b>Sidecar</b>, a plain but pretty theme for the Pelican static site generator. See the <a href="https://github.com/pelican-themes/sidecar">README</a> for docs."""
 AVATAR_URL = "{SITEURL}/{THEME_STATIC_DIR}/images/avatar.jpg"
 SITEURL = "http://localhost:8000"
 PATH = "content"
@@ -13,7 +13,7 @@ TYPOGRIFY_DASHES = "oldschool"
 TIMEZONE = "Europe/London"
 DEFAULT_LANG = "en"
 DEFAULT_PAGINATION = 10
-GITHUB_URL = "https://github.com/seanh/sidecar"
+GITHUB_URL = "https://github.com/pelican-themes/sidecar"
 DEFAULT_DATE_FORMAT = "%b %d, %Y"
 FORMATTED_FIELDS = ["summary", "subheading", "subtitle"]
 FEED_DOMAIN = SITEURL

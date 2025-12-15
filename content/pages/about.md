@@ -2,7 +2,7 @@ Title: About
 Summary:
     This is the demo site for <b>Sidecar</b>, a plain but
     pretty theme for the Pelican static site generator.
-    See the <a href="https://github.com/seanh/sidecar">README</a>
+    See the <a href="https://github.com/pelican-themes/sidecar">README</a>
     for docs.
 Modified: 2025-12-09
 
