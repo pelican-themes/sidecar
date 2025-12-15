@@ -1,11 +1,11 @@
 {% if DEFAULT_PAGINATION %}
   <footer class="pagination">
     {% if articles_previous_page %}
-      <a rel="prev" href="{{ SITEURL }}/{{ articles_previous_page.url }}" title="Previous page">&larr;</a>
+      <a rel="prev" href="{{ SITEURL }}/{{ articles_previous_page.url }}" title="Previous page">&larr; newer</a>
     {% endif %}
 
     {% if articles_next_page %}
-      <a rel="next" href="{{ SITEURL }}/{{ articles_next_page.url }}" title="Next page">&rarr;</a>
+      <a rel="next" href="{{ SITEURL }}/{{ articles_next_page.url }}" title="Next page">older &rarr;</a>
     {% endif %}
   </footer>
 {% endif %}
