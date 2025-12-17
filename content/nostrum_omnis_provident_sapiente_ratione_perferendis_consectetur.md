@@ -10,7 +10,7 @@ Date: 2024-01-23T20:40:55
 Category: examples
 Tags: foo, waldo
 
-<a href="https://www.seanh.cc/sidecar">Lorem ipsum dolor sit amet</a>,
+<a href="https://www.pelican-themes.github.io/sidecar">Lorem ipsum dolor sit amet</a>,
 consectetur adipiscing elit 🫢. <del>Nunc</del> eu <ins>tincidunt</ins> massa,
 in aliquam nunc. Suspendisse potenti <q>cas pellentesque non turpis non
 sodales</q>:
