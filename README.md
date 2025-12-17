@@ -2,7 +2,7 @@ Sidecar
 =======
 
 A plain but pretty theme for the [Pelican](https://getpelican.com/) static site
-generator. [Demo site](https://www.pelican-themes.github.io/sidecar/).
+generator. [Demo site](https://pelican-themes.github.io/sidecar/).
 
 <img src="screenshot.png" alt="A screenshot of the theme.">
 
@@ -13,7 +13,7 @@ Features
   Sidecar is based on **Oatcake**, my universal CSS typography theme.
   See [Oatcake's site](https://www.seanh.cc/oatcake/) for documentation:
   anything you see on that page, you can use in your pages and articles with Sidecar.
-  The dummy articles on Sidecar's demo site show [some of the elements in action](https://www.pelican-themes.github.io/sidecar/2025/05/25/sunt-excepturi-eius-nihil-ea-dignissimos-dolores/).
+  The dummy articles on Sidecar's demo site show [some of the elements in action](https://pelican-themes.github.io/sidecar/2025/05/25/sunt-excepturi-eius-nihil-ea-dignissimos-dolores/).
 * **Responsive design**: works great on both desktop and mobile.
 * **Customizable colors, fonts, and elements**, both [site-wide](#custom_css) and [per-page/article](#custom_article_css) styles.
 * **Code blocks with syntax highlighting**.
@@ -24,17 +24,17 @@ Features
 * **Customizable article and page taglines and footers** with the [`SIDECAR_{ARTICLE|PAGE}_{TAGLINE|FOOTER}_ITEMS`](#footers) settings.
 * **Supports Pelican's Atom and RSS feeds** with feed autodiscovery links in the HTML `<head>`.
 * **Supports all of Pelican's pages:**
-  the [index page](https://www.pelican-themes.github.io/sidecar/),
-  article pages ([example](https://www.pelican-themes.github.io/sidecar/2025/05/25/sunt-excepturi-eius-nihil-ea-dignissimos-dolores/)),
-  static pages ([example](https://www.pelican-themes.github.io/sidecar/about/)),
-  the [archives page](https://www.pelican-themes.github.io/sidecar/archives/),
-  [authors](https://www.pelican-themes.github.io/sidecar/authors/),
-  [categories](https://www.pelican-themes.github.io/sidecar/categories/),
-  [tags](https://www.pelican-themes.github.io/sidecar/tags/),
+  the [index page](https://pelican-themes.github.io/sidecar/),
+  article pages ([example](https://pelican-themes.github.io/sidecar/2025/05/25/sunt-excepturi-eius-nihil-ea-dignissimos-dolores/)),
+  static pages ([example](https://pelican-themes.github.io/sidecar/about/)),
+  the [archives page](https://pelican-themes.github.io/sidecar/archives/),
+  [authors](https://pelican-themes.github.io/sidecar/authors/),
+  [categories](https://pelican-themes.github.io/sidecar/categories/),
+  [tags](https://pelican-themes.github.io/sidecar/tags/),
   and period archives (for example:
-  [all articles from 2024](https://www.pelican-themes.github.io/sidecar/2024/),
-  [all articles from January 2024](https://www.pelican-themes.github.io/sidecar/2024/01/), or
-  [all articles from 26th January 2024](https://www.pelican-themes.github.io/sidecar/2024/01/26/)).
+  [all articles from 2024](https://pelican-themes.github.io/sidecar/2024/),
+  [all articles from January 2024](https://pelican-themes.github.io/sidecar/2024/01/), or
+  [all articles from 26th January 2024](https://pelican-themes.github.io/sidecar/2024/01/26/)).
 * **Uses semantic HTML** including:
   the `<html>` element's `lang` attribute for the site's default language (the [`DEFAULT_LANG`](#DEFAULT_LANG) setting) or the page/article's language;
   `<header>` for the site header;
@@ -96,7 +96,7 @@ Usage
 Sidecar supports optional article and page "summaries" (or "subtitles" /
 "subheadings") that're displayed in large-text beneath the article or page's
 title.
-See this demo post for [an example of an article with a summary](https://www.pelican-themes.github.io/sidecar/2025/05/25/sunt-excepturi-eius-nihil-ea-dignissimos-dolores/).
+See this demo post for [an example of an article with a summary](https://pelican-themes.github.io/sidecar/2025/05/25/sunt-excepturi-eius-nihil-ea-dignissimos-dolores/).
 
 You create a summary by adding a `Summary` to your article or page's metadata, like this:
 
@@ -221,12 +221,12 @@ article's tagline as its "updated" date:
 Date: 2015-11-12
 <mark>Modified: 2015-12-05</mark></code></pre>
 
-You can see an example in [this dummy article](https://www.pelican-themes.github.io/sidecar/2021/02/16/etiam-elementum-nibh-vel-tincidunt-auctor/).
+You can see an example in [this dummy article](https://pelican-themes.github.io/sidecar/2021/02/16/etiam-elementum-nibh-vel-tincidunt-auctor/).
 
 _Static pages_ don't show any created or updated date by default, but if you add
 a `Modified` date to a static page's metadata it'll be shown at the bottom of
 the page as "Last updated".
-You can see an example on [the demo site's <i>About</i> page](https://www.pelican-themes.github.io/sidecar/about/).
+You can see an example on [the demo site's <i>About</i> page](https://pelican-themes.github.io/sidecar/about/).
 
 Settings
 --------
