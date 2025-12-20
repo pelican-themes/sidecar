@@ -12,8 +12,6 @@ help:
 	@echo "    Upgrade or downgrade foo to 1.2.3"
 	@echo "make posts"
 	@echo "    (Re)-generate the example posts"
-	@echo "make readme version=1.0.0"
-	@echo "    Update README.md with version number 1.0.0"
 
 .PHONY: dev
 dev: python
@@ -39,10 +37,6 @@ upgrade-package:
 posts:
 	rm content/*.md 2>/dev/null || true
 	bin/make_posts
-
-.PHONY: readme
-readme:
-	cog -D version=${version} -r README.md
 
 .PHONY: python
 python:
