@@ -544,7 +544,7 @@ settings in your Pelican config file: `SIDECAR_ARTICLE_TAGLINE_ITEMS`,
 # pelicanconf.py
 
 SIDECAR_ARTICLE_TAGLINE_ITEMS = ["TIME", "TAGS"]
-SIDECAR_ARTICLE_FOOTER_ITEMS = ["AUTHORS", "SOURCE"]
+SIDECAR_ARTICLE_FOOTER_ITEMS = ["AUTHORS"]
 SIDECAR_PAGE_TAGLINE_ITEMS = [] # No page tagline will be shown by default.
 SIDECAR_PAGE_FOOTER_ITEMS = ["TIME"] # Shows 'Last updated' dates for pages that have Modified times.
 ```
@@ -556,13 +556,6 @@ Certain string values have special meanings in `SIDECAR_{ARTICLE|PAGE}_{TAGLINE|
 * `TIME`: inserts the article's publication date/time.
 
   You can customize the format of dates with Pelican's [`DEFAULT_DATE_FORMAT` and `DATE_FORMATS` settings](https://docs.getpelican.com/en/latest/settings.html#time-and-date).
-
-* `SOURCE`: inserts a link to the article's plain text source file, if [Pelican's `OUTPUT_SOURCES` setting](https://docs.getpelican.com/en/latest/settings.html#OUTPUT_SOURCES) is enabled.
-
-  If you've changed Pelican's `ARTICLE_SAVE_AS` and `ARTICLE_URL` settings from
-  the defaults then you need to add an `ARTICLE_SOURCE_URL` setting to your
-  Pelican config to tell Sidecar how to generate the URLs to your article
-  source files. See [`ARTICLE_SOURCE_URL` and `PAGE_SOURCE_URL`](#article_source_url).
 
 * `CATEGORY`: inserts a link to Pelican's category page for the article's category.
 
@@ -577,12 +570,13 @@ If [Pelican's `OUTPUT_SOURCES` setting](https://docs.getpelican.com/en/latest/se
 is enabled Pelican includes the plaintext source files (e.g. Markdown files) of
 your articles and pages in your site.
 
-On article and static pages, if `OUTPUT_SOURCES` is enabled, Sidecar inserts a
-link to the article or page's plain text source file into the HTML `<head>`
-(using `<link rel="alternate" type="text/plain" href="...">`).
-
-Source links can also be included in article or page taglines or footers by including `"SOURCE"` in
+Source links can be included in article or page taglines or footers by including `"SOURCE"` in
 the [`SIDECAR_{ARTICLE|PAGE}_{TAGLINE|FOOTER}_ITEMS`](#footers) settings.
+
+> [!WARNING]
+> This may cause URLs to the plain text versions of your articles to appear in search results!
+> If you have control of your HTTP headers you can add an `X-Robots-Tag: noindex` header to prevent this.
+> Otherwise you might consider not adding these links.
 
 If you've changed [Pelican's `ARTICLE_SAVE_AS` and `ARTICLE_URL` or `PAGE_SAVE_AS` and `PAGE_URL` settings](https://docs.getpelican.com/en/latest/settings.html#url-settings)
 from the defaults then you need to add `ARTICLE_SOURCE_URL` and
