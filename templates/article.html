@@ -8,13 +8,6 @@
   {% set source_url %}{{ SITEURL }}/{{ (ARTICLE_SOURCE_URL or '{article.slug}{OUTPUT_SOURCES_EXTENSION}').format(article=article, OUTPUT_SOURCES_EXTENSION=OUTPUT_SOURCES_EXTENSION) }}{% endset %}
 {% endif %}
 
-{% block head %}
-  {{ super() }}
-  {% if OUTPUT_SOURCES %}
-    <link rel="alternate" type="text/plain" href="{{ source_url }}">
-  {% endif %}
-{% endblock %}
-
 {% set anchors = true %}
 
 {% block content %}
@@ -53,7 +46,7 @@
   {{ article.content }}
 
   {% block footer %}
-    {% with tagline_items=SIDECAR_ARTICLE_FOOTER_ITEMS, default_tagline_items=["AUTHORS", "SOURCE"] %}
+    {% with tagline_items=SIDECAR_ARTICLE_FOOTER_ITEMS, default_tagline_items=["AUTHORS"] %}
       {% include "tagline.html" %}
     {% endwith %}
   {% endblock %}
