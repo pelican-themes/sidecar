@@ -62,17 +62,11 @@ Installation
 
 2. Pin your version by checking out the latest Sidecar release:
 
-   <!--[[[cog
-       import cog
-
-       cog.outl("```terminal")
-       cog.outl(f"git -C sidecar checkout {version}")
-       cog.outl("```")
-   ]]]-->
    ```terminal
-   git -C sidecar checkout 1.0.0
+   git -C sidecar checkout VERSION
    ```
-   <!--[[[end]]]-->
+
+   Replace `VERSION` with the latest version number from [Sidecar's releases](https://github.com/pelican-themes/sidecar/releases).
 
    Follow Sidecar on GitHub or subscribe to [GitHub's Atom feed for new releases](https://github.com/pelican-themes/sidecar/releases.atom)
    to get notified so you can update your version number.
