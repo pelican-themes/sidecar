@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% if robots is not defined %}{% set robots = "noindex" %}{% endif %}
+
 {% if bio is not defined %}{% set bio = true %}{% endif %}
 
 {% block content %}

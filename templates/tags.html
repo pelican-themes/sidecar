@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% if robots is not defined %}{% set robots = "noindex" %}{% endif %}
+
 {% block title %}{{ super() }} - Tags{% endblock %}
 
 {% block content_title %}Tags{% endblock %}
