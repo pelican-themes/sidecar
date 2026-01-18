@@ -4,6 +4,9 @@
     {% block head %}
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+{% if robots %}
+      <meta name="robots" content="{{ robots }}" />
+{% endif %}
       <title>{% block title %}{{ SITENAME|striptags }}{% endblock %}</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0">
       <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/sidecar.css">
