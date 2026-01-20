@@ -1,5 +1,11 @@
 {% extends "index.html" %}
 
+{% if ARCHIVES_METADESCRIPTION is defined %}
+  {% set metadescription = ARCHIVES_METADESCRIPTION %}
+{% else %}
+  {% set metadescription = "Archive of all posts." %}
+{% endif %}
+
 {% set bio = false %}
 {% set articles_caption = "All Posts" %}
 

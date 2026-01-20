@@ -1,5 +1,12 @@
 {% extends "index.html" %}
 
+{% if AUTHOR_METADESCRIPTION is defined %}
+  {% set metadescription_fmt = AUTHOR_METADESCRIPTION %}
+{% else %}
+  {% set metadescription_fmt = "All posts by {author}." %}
+{% endif %}
+{% set metadescription = metadescription_fmt.format(author=author) %}
+
 {% set bio = false %}
 {% set articles_caption = "Posts by {}".format(author) %}
 

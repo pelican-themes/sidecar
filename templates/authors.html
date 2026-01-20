@@ -1,5 +1,11 @@
 {% extends "tags.html" %}
 
+{% if AUTHORS_METADESCRIPTION is defined %}
+  {% set metadescription = AUTHORS_METADESCRIPTION %}
+{% else %}
+  {% set metadescription = "List of all authors with posts on this site." %}
+{% endif %}
+
 {% block title %}{{ super() }} - Authors{% endblock %}
 
 {% block content_title %}Authors{% endblock %}

@@ -2,6 +2,12 @@
 
 {% if robots is not defined %}{% set robots = "noindex" %}{% endif %}
 
+{% if TAGS_METADESCRIPTION is defined %}
+  {% set metadescription = TAGS_METADESCRIPTION %}
+{% else %}
+  {% set metadescription = "List of all tags on this site." %}
+{% endif %}
+
 {% block title %}{{ super() }} - Tags{% endblock %}
 
 {% block content_title %}Tags{% endblock %}

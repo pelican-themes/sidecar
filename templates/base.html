@@ -7,6 +7,16 @@
 {% if robots %}
       <meta name="robots" content="{{ robots }}" />
 {% endif %}
+{% if metadescription is not defined %}
+  {% if SITEDESCRIPTION %}
+    {% set metadescription = SITEDESCRIPTION %}
+  {% elif SITESUBTITLE %}
+    {% set metadescription = SITESUBTITLE %}
+  {% endif %}
+{% endif %}
+{% if metadescription %}
+      <meta name="description" content="{{ metadescription|striptags|escape }}" />
+{% endif %}
       <title>{% block title %}{{ SITENAME|striptags }}{% endblock %}</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0">
       <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/sidecar.css">
