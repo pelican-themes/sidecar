@@ -1,5 +1,12 @@
 {% extends "index.html" %}
 
+{% if TAG_METADESCRIPTION is defined %}
+  {% set metadescription_fmt = TAG_METADESCRIPTION %}
+{% else %}
+  {% set metadescription_fmt = "All posts with tag “{tag}”." %}
+{% endif %}
+{% set metadescription = metadescription_fmt.format(tag=tag) %}
+
 {% set bio = false %}
 {% set articles_caption = "Posts Tagged &ldquo;{}&rdquo;".format(tag) %}
 

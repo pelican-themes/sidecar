@@ -1,5 +1,11 @@
 {% extends "tags.html" %}
 
+{% if CATEGORIES_METADESCRIPTION is defined %}
+  {% set metadescription = CATEGORIES_METADESCRIPTION %}
+{% else %}
+  {% set metadescription = "List of all categories on this site." %}
+{% endif %}
+
 {% block title %}{{ super() }} - Categories{% endblock %}
 
 {% block content_title %}Categories{% endblock %}

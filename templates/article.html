@@ -4,6 +4,16 @@
 
 {% block title %}{{ super() }} - {{ article.title|striptags  }}{% endblock title %}
 
+{% if metadescription is not defined %}
+  {% if article.metadata.description %}
+    {% set metadescription = article.metadata.description %}
+  {% elif article.metadata.summary %}
+    {% set metadescription = article.metadata.summary %}
+  {% else %}
+    {% set metadescription = None %}
+  {% endif %}
+{% endif %}
+
 {% if source_url is not defined %}
   {% set source_url %}{{ SITEURL }}/{{ (ARTICLE_SOURCE_URL or '{article.slug}{OUTPUT_SOURCES_EXTENSION}').format(article=article, OUTPUT_SOURCES_EXTENSION=OUTPUT_SOURCES_EXTENSION) }}{% endset %}
 {% endif %}

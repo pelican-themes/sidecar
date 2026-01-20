@@ -1,5 +1,12 @@
 {% extends "index.html" %}
 
+{% if CATEGORY_METADESCRIPTION is defined %}
+  {% set metadescription_fmt = CATEGORY_METADESCRIPTION %}
+{% else %}
+  {% set metadescription_fmt = "All posts in category “{category}”." %}
+{% endif %}
+{% set metadescription = metadescription_fmt.format(category=category) %}
+
 {% set bio = false %}
 {% set articles_caption = "Posts in Category &ldquo;{}&rdquo;".format(category) %}
 

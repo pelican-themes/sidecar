@@ -145,6 +145,116 @@ bodies by wrapping the `<h2>` or `<h3>` in an `<hgroup>` along with one or more
 </hgroup>
 ```
 
+### Meta descriptions
+
+Sidecar includes support for HTML `<meta name="description" content="..." />`
+metadata tags.
+
+These are used by search engines like Google to generate the
+"snippets" that are shown in search page results.
+See Google's [Best practices for creating quality meta descriptions](https://developers.google.com/search/docs/appearance/snippet#meta-descriptions).
+
+A meta description is supposed to be "a short, relevant summary of what
+a particular page is about" that "informs and interests users": "[t]hey
+are like a pitch that convince the user that the page is exactly what
+they're looking for."
+Here's one of the examples Google gives of a good meta description:
+
+```html
+<meta name="description" content="Learn how to cook eggs with this complete guide in 1 hour or less. We cover all the methods, including: over-easy, sunny side up, boiled, and poached.">
+```
+
+To customize your page's meta descriptions using Sidecar:
+
+* On static pages and article pages, if the static page or article has a
+  `Description` in its metadata then that will be used for the meta
+  description. If not, then if the page or article has a `Summary` in its
+  metadata that will be used. If neither `Description` or `Summary` is present
+  in the page or article's metadata then the page will have no meta
+  description.
+
+  The difference between `Description` and `Summary` is that `Description`
+  is used for the meta description tag only, whereas `Summary`'s are also
+  displayed below the page or article's title and in RSS and Atom feeds
+  (see above).
+
+  For example to add a meta description to a Markdown-based article:
+
+  ```
+  Title: Ruff Python formatting in Vim without plugins
+  Tags: Python, Vim
+  Description: The simplest way to integrate Ruff's Python code formatter into Vim.
+
+  This is the body of the article...
+  ```
+
+  If you want to be able to write multi-line descriptions add `"description"`
+  to the [`FORMATTED_FIELDS`](https://docs.getpelican.com/en/latest/settings.html#FORMATTED_FIELDS)
+  setting in your Pelican config:
+
+  ```python
+  # pelicanconf.py
+
+  FORMATTED_FIELDS = ["summary", "description"]
+  ```
+
+  Now you can add multi-line descriptions to pages and articles like this:
+
+  ```
+  Title: Ruff Python formatting in Vim without plugins
+  Tags: Python, Vim
+  Description:
+      The simplest way to integrate Ruff's Python code formatter into Vim, no
+      plugins or language servers needed. The same technique can also be used to
+      integrate any command line formatter, for any file type.
+
+  This is the body of the article...
+  ```
+
+* If you add a `SITEDESCRIPTION` string to your site's Pelican config,
+  Sidecar will use it as the meta description for your site's index page.
+  Otherwise, Sidecar will fall back to the `SITESUBTITLE` setting.
+
+* Sidecar uses hard-coded meta descriptions for the archives page, period
+  archives pages, tags/tag, categories/category and authors/author pages.
+  For example the hard-coded meta description for the archives page is:
+  "Archive of all posts."
+
+  Each hard-coded meta description can be customized with a corresponding
+  `*_METADESCRIPTION` setting in your site's Pelican config:
+
+  ```python
+  # pelicanconf.py
+
+  # The meta description for the archives page.
+  ARCHIVES_METADESCRIPTION = "Archive of all posts."
+
+  # The meta description string for the authors page.
+  AUTHORS_METADESCRIPTION = "List of all authors with posts on this site."
+
+  # The meta description string for the categories page.
+  CATEGORIES_METADESCRIPTION = "List of all categories on this site."
+
+  # The meta description string for the tags page.
+  TAGS_METADESCRIPTION = "List of all tags on this site."
+
+  # The meta description string for author pages.
+  # {author} will be replaced with the name of the author.
+  AUTHOR_METADESCRIPTION = "All posts by {author}."
+
+  # The meta description string for category pages.
+  # {category} will be replaced with the name of the category.
+  CATEGORY_METADESCRIPTION = "All posts in category “{category}”."
+
+  # The meta description string for tag pages.
+  # {tag} will be replaced with the name of the tag.
+  TAG_METADESCRIPTION = "All posts with tag “{tag}”."
+
+  # The meta description string for period archive pages.
+  # {periodstr} will be replaced with a string representing the period, e.g. "Jan 2026".
+  PERIODARCHIVES_METADESCRIPTION = "All posts from {periodstr}."
+  ```
+
 ### Tables of contents
 
 Sidecar uses [Tocbot](https://tscanlin.github.io/tocbot/) to generate tables of

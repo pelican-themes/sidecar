@@ -2,6 +2,13 @@
 
 {% set periodstr = period | reverse | join(" ") %}
 
+{% if PERIODARCHIVES_METADESCRIPTION is defined %}
+  {% set metadescription_fmt = PERIODARCHIVES_METADESCRIPTION %}
+{% else %}
+  {% set metadescription_fmt = "All posts from {periodstr}." %}
+{% endif %}
+{% set metadescription = metadescription_fmt.format(periodstr=periodstr) %}
+
 {% set bio = false %}
 {% set articles_caption = "Posts from {}".format(periodstr) %}
 
