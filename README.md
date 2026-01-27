@@ -311,16 +311,6 @@ your [`SIDECAR_NAVBAR`](#sidecar_navbar) setting). The idea is that you set
 GITHUB_URL = "https://github.com/seanh"
 ```
 
-### `SIDECAR_SEARCH`
-
-Set this to `False` to remove the search bar from the archives page:
-
-```python
-# pelicanconf.py
-
-SIDECAR_SEARCH = False
-```
-
 ### `SITENAME`
 
 Sets the name of your site in tab and feed titles:
@@ -601,8 +591,10 @@ When overriding a template you can inherit from one of the theme's templates wit
 blocks with `{% block %}`. When overriding a block you can call the template's
 original block with `{{ super() }}`.
 
-Let's work through an example of using template customization to add favicons to
-a site:
+### Adding a favicon
+
+Let's work through an example of using template customization to add a favicon
+to a site:
 
 1.  Generate some favicon images for your site.
     You can start with an image or photo and use a favicon generator site like
@@ -630,12 +622,12 @@ a site:
 
     ```jinja2
     {# templates/base.html #}
-    
+
     {% extends '!theme/base.html' %}
 
     {% block head %}
       {{ super() }}
-  
+
       <link rel="icon" type="image/png" href="{{ SITEURL }}/images/favicon-96x96.png" sizes="96x96" />
       <link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/images/favicon.svg" />
       <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" />
@@ -652,3 +644,22 @@ What the `base.html` template does is:
 3. Uses `{% block %}` to override the [`head` block](https://github.com/pelican-themes/sidecar/blob/b22d46698d328f9120d980f6f5c3688080346d40/templates/base.html#L4-L37) in Sidecar's `base.html` template.
 4. Uses `{{ super() }}` to call the base template's `head` block.
 5. Finally, adds some HTML to the `head` block to inject the favicons into the site.
+
+### Customizing the search bar
+
+Sidecar puts a search bar on the archives page that, by default, uses Google to
+search your site. You can customize the search bar by overriding the
+[`search.html` template](templates/search.html). For example to change the
+search to use Duck Duck Go you could add a `templates/search.html` file to your
+site, like this:
+
+```jinja2
+{# templates/search.html #}
+
+<form method="get" action="https://duckduckgo.com/" class="search">
+  <input type="hidden" name="sites" value="{{ SITEURL }}" />
+  <input type="search" name="q" placeholder="Full-text search&hellip;" aria-label="Full-text search" />
+</form>
+```
+
+If you simply want to _remove_ the search bar, just add an empty `templates/search.html` file to your site.
