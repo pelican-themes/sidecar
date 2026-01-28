@@ -12,6 +12,6 @@
 {% set bio = false %}
 {% set articles_caption = "Posts from {}".format(periodstr) %}
 
-{% block title %}{{ super() }} - {{ periodstr }}{% endblock %}
+{% block title %}{{ periodstr }} - {{ super() }}{% endblock %}
 
 {% block content_title %}{{ periodstr }}{% endblock %}

@@ -10,6 +10,6 @@
 {% set bio = false %}
 {% set articles_caption = "Posts Tagged &ldquo;{}&rdquo;".format(tag) %}
 
-{% block title %}{{ super() }} - {{ tag }}{% endblock %}
+{% block title %}{{ tag }} - {{ super() }}{% endblock %}
 
 {% block content_title %}{{ tag }}{% endblock %}
