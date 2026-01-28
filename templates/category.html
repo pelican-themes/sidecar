@@ -10,6 +10,6 @@
 {% set bio = false %}
 {% set articles_caption = "Posts in Category &ldquo;{}&rdquo;".format(category) %}
 
-{% block title %}{{ super() }} - {{ category }}{% endblock %}
+{% block title %}{{ category }} - {{ super() }}{% endblock %}
 
 {% block content_title %}{{ category }}{% endblock %}

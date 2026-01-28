@@ -2,7 +2,7 @@
 
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
-{% block title %}{{ super() }} - {{ article.title|striptags  }}{% endblock title %}
+{% block title %}{{ article.title|striptags }} - {{ super() }}{% endblock title %}
 
 {% if metadescription is not defined %}
   {% if article.metadata.description %}
